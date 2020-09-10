@@ -106,7 +106,7 @@ _feed_to_exchange_map = {
         GEMINI: L2_BOOK,
         BITTREX: 'SubscribeToExchangeDeltas',
         BITCOINCOM: 'subscribeOrderbook',
-        BITMAX: L2_BOOK,
+        BITMAX: 'depth:{}',
         UPBIT: L2_BOOK,
         GATEIO: 'depth.subscribe'
     },
@@ -165,7 +165,7 @@ _feed_to_exchange_map = {
         GEMINI: TRADES,
         BITTREX: TRADES,
         BITCOINCOM: 'subscribeTrades',
-        BITMAX: TRADES,
+        BITMAX: 'trades:{}',
         UPBIT: TRADES,
         GATEIO: 'trades.subscribe'
     },
