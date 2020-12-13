@@ -38,7 +38,7 @@ class Bybit(Feed):
                 LOG.error("%s: Error from exchange %s", self.id, msg)
         elif "trade" in msg["topic"]:
             await self._trade(msg, timestamp)
-        elif "orderBookL2" in msg["topic"]:
+        elif "orderBook" in msg["topic"]:
             await self._book(msg, timestamp)
         elif "instrument_info" in msg["topic"]:
             await self._instrument_info(msg, timestamp)
@@ -175,7 +175,7 @@ class Bybit(Feed):
                                 )
 
     async def _book(self, msg: dict, timestamp: float):
-        pair = normalize_pair(msg['topic'].split('.')[1])
+        pair = normalize_pair(msg['topic'].split('.')[-1])
         update_type = msg['type']
         data = msg['data']
         forced = False
