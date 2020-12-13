@@ -107,7 +107,7 @@ _feed_to_exchange_map = {
         OKEX: '{}/depth_l2_tbt',
         COINBENE: L2_BOOK,
         DERIBIT: 'book',
-        BYBIT: 'orderBookL2_25',
+        BYBIT: 'orderBookL2_200',
         FTX: 'orderbook',
         FTX_US: 'orderbook',
         GEMINI: L2_BOOK,
