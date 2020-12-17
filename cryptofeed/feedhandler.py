@@ -245,7 +245,7 @@ class FeedHandler:
                 LOG.error("%s: encountered an exception, reconnecting", feed.id, exc_info=True)
                 await asyncio.sleep(delay)
                 retries += 1
-                delay *= 2
+                delay = 2 * delay if delay < 120 else 120
 
         LOG.error("%s: failed to reconnect after %d retries - exiting", feed.id, retries)
         raise ExhaustedRetries()
